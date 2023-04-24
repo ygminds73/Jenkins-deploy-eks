@@ -11,6 +11,7 @@ pipeline {
             steps {
                 script {
                     dir('terraform') {
+                        sh "git clone https://github.com/ygminds73/Jenkins-deploy-eks.git"
                         sh "terraform init --reconfigure"
                         sh "terraform apply -auto-approve"
                     }
